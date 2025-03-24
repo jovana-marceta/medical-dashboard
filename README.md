@@ -1,28 +1,40 @@
 # Medical Dashboard
 
-The **Medical Dashboard** is a web-based application built using the Angular framework. It serves as a dashboard interface for managing and visualizing data, providing a user-friendly and responsive experience. This project leverages modern web technologies and follows best practices for scalable and maintainable front-end development.
+**Medical Dashboard** is a responsive, modular, and scalable web-based application developed using the Angular framework. It is designed as a dashboard interface to manage and visualize data, built with best practices in mind for maintainability and performance.
 
-## Features
+## 🔧 Tech Stack
 
-- **Modular Architecture**: Organized into core, shared, and feature-specific modules for better maintainability.
-- **Responsive Design**: Built with SCSS for styling, ensuring compatibility across devices.
-- **Routing**: Implements Angular Router for seamless navigation between pages.
-- **Reusable Components**: Includes shared components like cards and content blocks for consistent UI.
-- **Data Binding**: Utilizes Angular's powerful two-way data binding for dynamic and interactive interfaces.
-- **Security**: Follows Angular's built-in security practices, including sanitization and trusted types.
+- **Framework**: [Angular](https://angular.io/) v17.3.0+
+- **Build Tools**: Angular CLI v17.3.9, Webpack (via Angular DevKit)
+- **Language**: TypeScript (strict mode enabled)
+- **Styling**: SCSS (modular structure with partials and includes)
+- **Testing**:
+  - Unit Testing: Jasmine + Karma
+- **RxJS**: For reactive programming and asynchronous data handling
+- **Zone.js**: For change detection
+- **Sass-True**: For testing SCSS logic
+- **ESLint/TSC**: Strict TypeScript configurations for better code quality
 
-## Development
+## ✅ Features
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+- **Modular Architecture**: Organized into core, shared, and feature-specific modules.
+- **Reusable Components**: Cards, content blocks, and more.
+- **Routing**: Handled by Angular Router.
+- **SCSS Architecture**: Uses partials and style modules for scalable styling.
+- **Responsive Design**: Fully mobile-friendly layout.
+- **Security**: Uses Angular’s built-in mechanisms for sanitization and trusted types.
+- **Development & Production Configs**: Separate environments and build options.
+
+## 🚀 Getting Started
+
+### Install Dependencies
+
+```bash
+npm install
+```
 
 ### Development Server
 
-Run `ng serve` to start the development server. Navigate to `http://localhost:4200/`. The application will automatically reload when you make changes to the source files.
-
-### Code Scaffolding
-
-Use the Angular CLI to generate new components, directives, pipes, services, and more:
-
-```sh
-ng generate component component-name
+```bash
+ng serve
 ```
