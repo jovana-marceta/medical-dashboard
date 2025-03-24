@@ -1,0 +1,96 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use './variables' as vars;
+
+$breakpoints: vars.$breakpoints;
+
+$column-prefix: 'col-';
+$offset-prefix: 'offset-';
+
+@mixin generate($spacing: 0, $divisions: 12) {
+  @if meta.type-of($spacing) != number {
+    @error 'Please provide a numeric parameter for $spacing. Provided: ' + $spacing;
+  }
+
+  @if (meta.type-of($divisions) != number) or ($divisions < 2) or ($divisions > 1000) {
+    @error 'Please provide a number for $divisions between 2 and 1000. Provided: ' + $divisions;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @if $spacing != 0 {
+      margin: 0 -#{$spacing};
+    }
+
+    [class*='#{$column-prefix}'], [class*='#{$offset-prefix}'] {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      max-width: 100%;
+      padding: 0 $spacing;
+    }
+  }
+
+  #{'.' + $column-prefix}auto {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 0 $spacing;
+  }
+
+  @include -unresponsive-grid-from($spacing, $divisions);
+  @include -responsive-grid-from($spacing, $divisions);
+}
+
+@function -calculate-ratio($counter, $divisions) {
+  @return math.div(100% * $counter, $divisions);
+}
+
+@mixin -unresponsive-grid-from($spacing, $divisions) {
+  $division-limit: $divisions + 1;
+
+  @for $currentIndex from 1 through $division-limit {
+    $current-ratio: -calculate-ratio($currentIndex, $divisions);
+
+    #{'.' + $column-prefix + $currentIndex} {
+      flex: 0 0 auto;
+      width: $current-ratio;
+      padding: 0 $spacing;
+    }
+
+    #{'.' + $offset-prefix + $currentIndex} {
+      margin-left: $current-ratio;
+    }
+  }
+}
+
+@mixin -responsive-grid-from($spacing, $divisions) {
+  $division-limit: $divisions + 1;
+
+  @each $breakpoint, $value in $breakpoints {
+    $description: map.get($value, description);
+
+    @media (min-width: #{map.get($value, size)}) {
+      #{'.' + $column-prefix + $description}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 0 $spacing;
+      }
+
+      @for $currentIndex from 1 through $division-limit {
+        $current-ratio: -calculate-ratio($currentIndex, $divisions);
+        $suffix: $description + '-' + $currentIndex;
+
+        #{'.' + $column-prefix + $suffix} {
+          flex: 0 0 auto;
+          width: $current-ratio;
+        }
+
+        #{'.' + $offset-prefix + $suffix} {
+          margin-left: $current-ratio;
+        }
+      }
+    }
+  }
+}

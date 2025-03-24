@@ -1,0 +1,25 @@
+<app-card [isAccent]="true">
+  <div class="space-between intro">
+    <h2 class="message-title">{{ currentMessageTitle }}</h2>
+    <span>{{ currentIndex + 1 }}/{{ messages.length }} messages</span>
+  </div>
+  <p class="text">
+    {{ currentMessage }}
+  </p>
+  <div class="button-group">
+    <button
+      class="btn btn-secondary"
+      (click)="previousMessage()"
+      [disabled]="currentIndex === 0"
+    >
+      &lt; Previous message
+    </button>
+    <button
+      class="btn btn-secondary"
+      (click)="nextMessage()"
+      [disabled]="currentIndex === messages.length - 1"
+    >
+      Next &gt;
+    </button>
+  </div>
+</app-card>

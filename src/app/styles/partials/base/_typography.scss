@@ -1,0 +1,45 @@
+@use 'variables' as vars;
+@use 'states';
+
+h1, h2, h3, h4, h5, h6 {
+	color: vars.$black;
+	font-family: vars.$font-primary;
+  font-weight: bold;
+}
+
+h1, .heading-1 {
+	font-size: 24px;
+	line-height: 28.2px;
+	margin-bottom: vars.$medium-gap;
+}
+
+h2, .heading-2 {
+  font-size: 16px;
+  line-height: 18.8px;
+}
+
+h3, .heading-3 {
+  font-size: 16px;
+  line-height: 18.8px;
+}
+
+a {
+	color: vars.$blue ;
+  @include states.set-hover {
+    text-decoration: underline;
+  }
+}
+
+.p-12-r {
+  font-family: vars.$font-primary;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14.1px;
+}
+
+.text-important {
+  font-size: 32px;
+  line-height: 37.6px;
+  font-weight: bold;
+  color: vars.$black;
+}

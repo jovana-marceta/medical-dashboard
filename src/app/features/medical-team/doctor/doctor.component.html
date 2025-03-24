@@ -1,0 +1,31 @@
+<app-card [isAccent]="false" [class.welcome-card]="isWelcome">
+  <div class="intro space-between pb-1">
+    <div class="d-flex" style="align-items: center; gap: 8px">
+      <img [src]="avatarPath" alt="doctor" class="avatar" />
+      <div class="set-column">
+        <h3 class="doctor-name">
+          <span *ngIf="isWelcome">
+            Welcome back, {{ getFirstName(doctor.name) }}
+          </span>
+          <span *ngIf="!isWelcome">
+            {{ doctor.name }}
+          </span>
+        </h3>
+        <span class="doctor-email">{{ doctor.email }}</span>
+      </div>
+    </div>
+    <div class="stack-center" style="gap: 4px">
+      <img src="../../../../assets/icons/Nurse.png" alt="nurse icon" />
+      <span class="icon-star"></span>
+    </div>
+  </div>
+  <div class="contact d-flex">
+    <p class="stack-center text p-12-r">
+      <span class="icon icon-phone"></span>{{ doctor.phone }}
+    </p>
+    <p class="stack-center text p-12-r">
+      <span class="icon icon-building"></span>
+      <a href="#" class="link">{{ doctor.hospital }} </a>
+    </p>
+  </div>
+</app-card>

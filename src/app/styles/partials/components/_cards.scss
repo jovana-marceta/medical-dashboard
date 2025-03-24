@@ -1,0 +1,56 @@
+@use 'variables' as vars;
+
+.card {
+  background-color: vars.$white;
+  border-radius: vars.$default-border-radius;
+  padding: vars.$default-gap;
+  margin-bottom: vars.$default-gap;
+  height: 100%;
+  max-height: 100px;
+
+  &.is-accent {
+    background-color: vars.$accent;
+    color: #C7C7C7;
+
+    h2 {
+      color: vars.$white;
+    }
+  }
+}
+
+.welcome-section {
+  margin-bottom: vars.$default-gap;
+  .card {
+    max-height: 160px;
+  }
+}
+
+.core-team {
+  .card {
+    max-height: 110px;
+  }
+}
+
+.welcome-card {
+  .card {
+    padding: 24px;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  .doctor-name {
+    font-size: 24px;
+    line-height: 28.2px;
+    margin-bottom: vars.$medium-gap;
+  }
+  .doctor-email {
+    font-size: 16px;
+    line-height: 18.8px;
+  }
+  .contact {
+    padding-top: vars.$medium-gap !important;
+  }
+}

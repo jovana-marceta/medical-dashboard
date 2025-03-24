@@ -1,0 +1,20 @@
+@use 'variables' as vars;
+@use 'states';
+
+.main-header {
+  margin-bottom: 24px;
+}
+
+.user-nav {
+  .icon-arrow-bottom {
+    font-size: 6px;
+    color: vars.$black;
+    padding: 8px;
+  }
+  @include states.set-hover {
+    .icon-arrow-bottom  {
+      background-color: #C5FFFD;
+      border-radius: 4px;  
+    }
+  }
+}

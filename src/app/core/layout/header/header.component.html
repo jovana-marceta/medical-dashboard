@@ -1,0 +1,25 @@
+<header class="main-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="space-between">
+          <a [routerLink]="['/']">
+            <img [src]="logo" alt="medical logo" class="logo d-block" />
+          </a>
+          <nav class="stack-center clickable user-nav">
+            <icon-button iconClass="icon-search"></icon-button>
+            <icon-button iconClass="icon-alarm"></icon-button>
+            <div class="stack-center set-gap ml-1">
+              <img [src]="avatarPath" alt="" class="avatar" />
+              <div class="set-column">
+                <h3>David Williams</h3>
+                <span>david.williamsgmail.com</span>
+              </div>
+              <span class="icon-arrow-bottom"></span>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

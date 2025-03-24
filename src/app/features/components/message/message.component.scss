@@ -1,0 +1,15 @@
+@use 'variables' as vars;
+
+.message-title {
+  font-size: 20px;
+  line-height: 23.5px;
+  font-weight: bold;
+}
+
+.text, .intro {
+  margin-bottom: vars.$medium-gap;
+}
+
+.btn-secondary:first-of-type {
+  margin-left: 0;
+}

@@ -1,0 +1,49 @@
+@use 'breakpoints';
+@use 'grid';
+@use 'variables' as vars;
+
+@include grid.generate(8px, 12);
+
+html {
+  background-color: vars.$background-light;
+  font-family: vars.$font-primary;
+  font-size: 14px;
+  font-weight: 400;
+  color: #858585;
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+	width: 100%;
+	height: 100%;
+
+  @include breakpoints.apply-on-mobile() {
+    padding: 0 vars.$default-gap;
+  }
+ 
+  @include breakpoints.apply-on-desktop() {
+    max-width: 928px;
+    padding: 0;
+  }
+
+  @include breakpoints.apply-on-large-desktop() {
+    max-width: 1184px;
+  }
+
+  @include breakpoints.grow-centrally();
+}
+
+.main-container {
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+
+	.main-content {
+		@include breakpoints.apply-on-large-desktop() {
+			width: 1184px;
+		}
+
+		@include breakpoints.grow-centrally();
+	}
+}

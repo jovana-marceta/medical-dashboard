@@ -1,0 +1,23 @@
+$breakpoints: (
+	mobile: (description: 'sm', size: 375px),
+	tablet: (description: 'md', size: 768px), 
+	desktop: (description: 'lg', size: 1024px),
+	largeDesktop: (description: 'xl', size: 1920px)
+);
+
+$font-primary: 'Public Sans', sans-serif;
+
+$black: #1D1D1D;
+$white: #FFF;
+$accent: #092B2F;
+$blue: #0000FF;
+
+$background-light: #F2F2F2;
+
+$default-border: 1px solid #E3E3E3;
+$default-border-radius: 12px;
+$small-border-radius: 8px;
+
+$default-gap: 16px;
+$medium-gap: 12px;
+$small-gap: 8px;

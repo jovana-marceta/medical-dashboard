@@ -1,0 +1,9 @@
+<app-content-block [title]="sectionTitle" [actionText]="sectionAction">
+  <div class="row core-team">
+    @for (doctor of doctors; track doctor.id) {
+    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+      <app-doctor [doctor]="doctor" />
+    </div>
+    }
+  </div>
+</app-content-block>

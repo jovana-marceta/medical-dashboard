@@ -1,0 +1,10 @@
+<app-card [isAccent]="false">
+  <div class="stack-center set-gap">
+    <img [src]="iconPath" />
+    <h3>{{ shortcut.title }}</h3>
+  </div>
+  <div class="data stack-center set-gap">
+    <span class="text-important">{{ shortcut.number }}</span>
+    <span class="p-12-r">{{ shortcut.daysSince }}</span>
+  </div>
+</app-card>

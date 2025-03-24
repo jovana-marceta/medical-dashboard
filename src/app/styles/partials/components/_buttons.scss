@@ -1,0 +1,53 @@
+@use 'states';
+@use 'variables' as vars;
+
+a,button {
+	appearance: none;
+	outline: none;
+}
+
+button,
+input[type='button'],
+input[type='submit'] {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+}
+
+.btn {
+	display: inline-block;
+	outline: none;
+	text-align: center;
+	transition: 0.3s background-color ease-out, 0.3s color ease-out;
+	will-change: background-color, color;
+	margin-left: vars.$default-gap;
+	border-radius: 4px;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #C5FFFD;
+  width: 36px;
+  height: 36px;
+  color: vars.$black;
+
+	@include states.set-hover {
+		background-color: #94FFFB;
+	}
+}
+
+.btn-secondary {
+	background-color: #197A85;
+	color: vars.$white;
+	font-size: 16px;
+	padding: 6px 10px;
+
+	@include states.set-hover {
+		background-color: #11535A;
+	}
+}

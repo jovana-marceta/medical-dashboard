@@ -1,0 +1,49 @@
+@use 'sass:map';
+
+@mixin apply-on($breakpoint) {
+  $breakpoints: (
+    mobile: (description: 'sm', size: 375px),
+    tablet: (description: 'md', size: 768px), 
+    desktop: (description: 'lg', size: 1024px),
+    largeDesktop: (description: 'xl', size: 1920px)
+  );
+
+  $breakpoint-value: map.get($breakpoints, $breakpoint);
+  @if $breakpoint-value {
+    $size: map.get($breakpoint-value, size);
+      @media (min-width: #{$size}) {
+        @content;
+      }
+  } @else {
+    @error "Breakpoint `#{$breakpoint}` not found in defined breakpoints.";
+  }
+}
+
+@mixin apply-on-mobile() {
+  @include apply-on(mobile) {
+    @content;
+  }
+}
+
+@mixin apply-on-tablet() {
+  @include apply-on(tablet) {
+    @content;
+  }
+}
+
+@mixin apply-on-desktop() {
+  @include apply-on(desktop) {
+    @content;
+  }
+}
+
+@mixin apply-on-large-desktop() {
+  @include apply-on(largeDesktop) {
+    @content;
+  }
+}
+
+@mixin grow-centrally() {
+	width: 100%;
+	margin: 0 auto;
+}

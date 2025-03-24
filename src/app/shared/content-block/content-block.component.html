@@ -1,0 +1,16 @@
+<section class="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-intro space-between pb-1">
+          <h2 class="heading-2 d-inline-block">{{ title }}</h2>
+          <a href="#" class="action stack-center set-gap"
+            >{{ actionText }}
+            <span *ngIf="hasIcon" class="icon-pen"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <ng-content />
+  </div>
+</section>

@@ -1,0 +1,7 @@
+@use 'variables' as vars;
+
+.main-header {
+  background-color: vars.$white;
+  border-bottom: vars.$default-border;
+  padding: 20px 0 vars.$default-gap 0;
+}

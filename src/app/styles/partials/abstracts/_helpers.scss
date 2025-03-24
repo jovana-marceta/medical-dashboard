@@ -1,0 +1,32 @@
+@use 'display';
+@use 'variables' as vars;
+
+.d-flex { display: flex;}
+
+.d-block { display: block; }
+
+.d-inline-block { display: inline-block; }
+
+.set-column { display: flex; flex-direction: column;}
+
+.stack-center { display: flex; align-items: center; }
+
+.set-gap { gap: 8px; }
+
+.space-between {
+	@include display.set-flex(center, space-between);
+}
+
+.stack-vertical {
+	@include display.set-flex(baseline, space-between, column, nowrap);
+}
+
+.pb-1 { padding-bottom: vars.$default-gap; }
+
+.ml-1 { margin-left: vars.$default-gap;	}
+
+.home-section {
+  margin-bottom: 32px;
+}
+
+.clickable { cursor: pointer;}

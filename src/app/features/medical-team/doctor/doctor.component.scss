@@ -1,0 +1,31 @@
+@use 'variables' as vars;
+@use 'states';
+
+.intro {
+  border-bottom: vars.$default-border;
+  align-items: flex-start;
+
+  .doctor-name {
+    @include states.set-hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.icon {
+  color: vars.$black;
+  margin-right: 4px;
+}
+
+.contact {
+  padding-top: vars.$small-gap;
+  gap: vars.$medium-gap;
+
+  .link {
+    @include states.set-hover {
+      text-decoration: underline;
+      transition: all .3s;
+    }
+  }
+}
+
