@@ -2,6 +2,12 @@
 
 **Medical Dashboard** is a responsive, modular, and scalable web-based application developed using the Angular framework. It is designed as a dashboard interface to manage and visualize data, built with best practices in mind for maintainability and performance.
 
+## 📸 Preview
+
+#### Dashboard Overview
+
+![Dashboard Overview](src/assets/screenshots/desktop-overview.png)
+
 ## 🔧 Tech Stack
 
 - **Framework**: [Angular](https://angular.io/) v17.3.0+
@@ -24,12 +30,6 @@
 - **Responsive Design**: Fully mobile-friendly layout.
 - **Security**: Uses Angular’s built-in mechanisms for sanitization and trusted types.
 - **Development & Production Configs**: Separate environments and build options.
-
-## 📸 Preview
-
-#### Dashboard Overview
-
-![Dashboard Overview](src/assets/screenshots/desktop-overview.png)
 
 ## 🚀 Getting Started
 
