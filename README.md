@@ -4,8 +4,7 @@
 
 ## 📸 Preview
 
-#### Dashboard Overview
-
+### [Dashboard link](https://angular-medical-dashboard.netlify.app/)
 ![Dashboard Overview](src/assets/screenshots/desktop-overview.png)
 
 ## 🔧 Tech Stack
